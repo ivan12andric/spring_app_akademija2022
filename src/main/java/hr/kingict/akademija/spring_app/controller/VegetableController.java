@@ -62,7 +62,16 @@ public class VegetableController {
 
         return ResponseEntity
                 .ok()
-                .body(VegetableDto.builder().id(id).name("Brokula").color("zelena").build());
+                .body(vegetableService.findById(id));
+
+    }
+
+    @GetMapping(value = "/{name}/{color}")
+    ResponseEntity<List<VegetableDto>> findByNameAndColour(@PathVariable String name, @PathVariable String color) {
+
+        return ResponseEntity
+                .ok()
+                .body(vegetableService.findAllByNameAndColourOrderByNameDesc(name, color));
 
     }
 
