@@ -13,4 +13,8 @@ public interface VegetableService {
     List<VegetableDto> findAll();
 
     List<VegetableDto> findAllByNameAndColourOrderByNameDesc(String name, String color);
+
+    List<VegetableDto> findByName(String name);
+
+
 }

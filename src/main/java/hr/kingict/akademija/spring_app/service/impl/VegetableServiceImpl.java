@@ -43,4 +43,12 @@ public class VegetableServiceImpl implements VegetableService {
                 .collect(Collectors.toList());
 
     }
+
+    @Override
+    public List<VegetableDto> findByName(String name) {
+        return vegetableRepository.findByName(name)
+                .stream()
+                .map(v -> VegetableDto.builder().id(v.getId()).name(v.getName()).color(v.getColor()).build())
+                .collect(Collectors.toList());
+    }
 }

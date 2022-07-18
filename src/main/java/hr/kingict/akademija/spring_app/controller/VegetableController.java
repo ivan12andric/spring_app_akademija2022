@@ -75,6 +75,15 @@ public class VegetableController {
 
     }
 
+    @GetMapping(value = "/by-name/{name}")
+    ResponseEntity<List<VegetableDto>> findByName(@PathVariable String name) {
+
+        return ResponseEntity
+                .ok()
+                .body(vegetableService.findByName(name));
+
+    }
+
   /*  @PostMapping
     ResponseEntity<String> create(@Valid @RequestBody VegetableForm vegetableForm, Errors errors) {
 
