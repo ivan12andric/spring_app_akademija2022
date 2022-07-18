@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface VegetableRepository extends JpaRepository<Vegetable, Integer > {
 
-    List<Vegetable> findAllByNameAndColorOrderByNameDesc(String name, String color);
+    List<Vegetable> findAllByNameContainsAndColorContainsOrderByNameDesc(String name, String color);
 
 }
