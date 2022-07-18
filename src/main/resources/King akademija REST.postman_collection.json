@@ -1,0 +1,117 @@
+{
+  "info": {
+    "_postman_id": "fe60649f-da88-4dfb-97fe-178a80a25875",
+    "name": "King akademija REST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Vegetables find all",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/vegetables",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vegetables"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vegetables find by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/vegetables",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vegetables"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vegetables find by name and color",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/vegetables/paradajz/zeleni",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vegetables",
+            "paradajz",
+            "zeleni"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vegetables find by name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/vegetables/by-name/paradajz",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vegetables",
+            "by-name",
+            "paradajz"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Vegetables create new",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \r\n    \"name\" : \"paprika\",\r\n    \"color\" : \"crvena\",\r\n    \"bestBefore\" : \"18.07.2022\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/vegetables",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "vegetables"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
