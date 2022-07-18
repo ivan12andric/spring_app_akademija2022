@@ -9,6 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -21,7 +22,7 @@ public class Vegetable {
 
     @Id
     @Column
-    private int id;
+    private Integer id;
 
     @Column(name = "NAZIV")
     private String name;
@@ -30,13 +31,13 @@ public class Vegetable {
     private String color;
 
     @Column(name = "DATUM_DO")
-    private Date bestBefore;
+    private LocalDate bestBefore;
 
     @Column(name = "DATUM_KREIRANJA")
-    private Date created;
+    private LocalDate created;
 
     @Column(name = "DATUM_AZURIRANJA")
-    private Date lastUpdate;
+    private LocalDate lastUpdate;
 
     @Column(name = "KREIRAO")
     private String userCreated;

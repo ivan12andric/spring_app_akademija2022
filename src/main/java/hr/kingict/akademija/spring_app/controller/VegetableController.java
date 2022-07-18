@@ -2,6 +2,8 @@ package hr.kingict.akademija.spring_app.controller;
 
 import hr.kingict.akademija.spring_app.dto.VegetableDto;
 import hr.kingict.akademija.spring_app.form.VegetableForm;
+import hr.kingict.akademija.spring_app.service.VegetableService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +15,9 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/vegetables")
 public class VegetableController {
+
+    @Autowired
+    private VegetableService vegetableService;
 
     /*@GetMapping
     List<VegetableDto> findAll() {
@@ -32,7 +37,7 @@ public class VegetableController {
 
     }*/
 
-    @GetMapping
+   /* @GetMapping
     ResponseEntity<List<VegetableDto>> findAll() {
 
         return ResponseEntity
@@ -40,6 +45,15 @@ public class VegetableController {
                 .body(Arrays
                         .asList(VegetableDto.builder().id(1).name("Brokula").color("zelena").build(),
                                 VegetableDto.builder().id(2).name("Mrkva").color("narančasta").build()));
+
+    }*/
+
+
+    @GetMapping
+    ResponseEntity<List<VegetableDto>> findAll() {
+        return ResponseEntity
+                .ok()
+                .body(vegetableService.findAll());
 
     }
 
