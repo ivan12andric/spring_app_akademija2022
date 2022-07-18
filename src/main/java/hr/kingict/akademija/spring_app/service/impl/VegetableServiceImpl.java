@@ -6,6 +6,7 @@ import hr.kingict.akademija.spring_app.repository.VegetableRepository;
 import hr.kingict.akademija.spring_app.service.VegetableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -53,7 +54,12 @@ public class VegetableServiceImpl implements VegetableService {
     }
 
     @Override
+    @Transactional
     public void save(Vegetable vegetable) {
         vegetableRepository.save(vegetable);
+
+        if("bla" == "bla"){
+            throw new IllegalArgumentException("bla");
+        }
     }
 }
