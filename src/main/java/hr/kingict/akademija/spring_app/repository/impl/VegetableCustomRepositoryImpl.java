@@ -14,6 +14,7 @@ public class VegetableCustomRepositoryImpl implements VegetableCustomRepository 
 
     @Override
     public List<Vegetable> findByName(String name) {
+
         return entityManager
                 .createQuery("select v from Vegetable v where v.name = :name", Vegetable.class)
                 .setParameter("name", name)

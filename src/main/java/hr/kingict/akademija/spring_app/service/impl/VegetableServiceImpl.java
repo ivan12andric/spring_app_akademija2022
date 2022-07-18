@@ -51,4 +51,9 @@ public class VegetableServiceImpl implements VegetableService {
                 .map(v -> VegetableDto.builder().id(v.getId()).name(v.getName()).color(v.getColor()).build())
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public void save(Vegetable vegetable) {
+        vegetableRepository.save(vegetable);
+    }
 }

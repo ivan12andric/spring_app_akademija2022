@@ -16,5 +16,7 @@ public interface VegetableService {
 
     List<VegetableDto> findByName(String name);
 
+    void save(Vegetable vegetable) ;
+
 
 }
