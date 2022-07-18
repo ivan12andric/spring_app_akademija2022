@@ -1,0 +1,11 @@
+CREATE TABLE POVRCE
+(
+    ID               NUMBER PRIMARY KEY AUTO_INCREMENT,
+    NAZIV            VARCHAR(255),
+    BOJA             VARCHAR(255),
+    DATUM_DO         DATE,
+    DATUM_KREIRANJA  DATE,
+    DATUM_AZURIRANJA DATE,
+    KREIRAO          VARCHAR,
+    AZURIRAO         VARCHAR
+);
