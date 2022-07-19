@@ -2,6 +2,7 @@ package hr.kingict.akademija.spring_app.dto;
 
 import lombok.*;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -12,8 +13,8 @@ import java.util.Date;
 @Builder
 public class VegetableDto {
 
-    private int id;
+    private Integer id;
     private String name;
     private String color;
-    private Date bestBefore;
+    private LocalDate bestBefore;
 }

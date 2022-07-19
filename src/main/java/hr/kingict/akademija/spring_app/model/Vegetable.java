@@ -1,9 +1,6 @@
 package hr.kingict.akademija.spring_app.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -12,10 +9,13 @@ import java.util.Date;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 @ToString
+@Builder
 @Entity
 @Table(name = "POVRCE")
 public class Vegetable {
+
 
     @Id
     @Column

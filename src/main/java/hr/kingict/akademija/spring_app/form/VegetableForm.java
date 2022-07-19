@@ -18,7 +18,6 @@ import java.util.Date;
 //@Component
 public class VegetableForm {
 
-    @NotNull
     private Integer id;
     @Size(min = 3, max = 10)
     private String name;

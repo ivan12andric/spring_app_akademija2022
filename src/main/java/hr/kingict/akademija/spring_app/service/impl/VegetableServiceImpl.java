@@ -1,6 +1,7 @@
 package hr.kingict.akademija.spring_app.service.impl;
 
 import hr.kingict.akademija.spring_app.dto.VegetableDto;
+import hr.kingict.akademija.spring_app.mapper.VegetableVegetableDtoMapper;
 import hr.kingict.akademija.spring_app.model.Vegetable;
 import hr.kingict.akademija.spring_app.repository.VegetableRepository;
 import hr.kingict.akademija.spring_app.service.VegetableService;
@@ -17,13 +18,16 @@ public class VegetableServiceImpl implements VegetableService {
     @Autowired
     private VegetableRepository vegetableRepository;
 
+    @Autowired
+    private VegetableVegetableDtoMapper vegetableVegetableDtoMapper;
+
     @Override
     public VegetableDto findById(Integer id) {
 
         Vegetable vegetable = vegetableRepository
                 .findById(id).orElse(null);
 
-        return VegetableDto.builder().name(vegetable.getName()).color(vegetable.getColor()).build();
+        return vegetableVegetableDtoMapper.map(vegetable);
     }
 
     @Override
@@ -32,7 +36,7 @@ public class VegetableServiceImpl implements VegetableService {
         return vegetableRepository
                 .findAll()
                 .stream()
-                .map(v -> VegetableDto.builder().id(v.getId()).name(v.getName()).color(v.getColor()).build())
+                .map(v -> vegetableVegetableDtoMapper.map(v))
                 .collect(Collectors.toList());
     }
 
@@ -40,7 +44,7 @@ public class VegetableServiceImpl implements VegetableService {
     public List<VegetableDto> findAllByNameAndColourOrderByNameDesc(String name, String color) {
         return vegetableRepository.findAllByNameContainsAndColorContainsOrderByNameDesc(name, color)
                 .stream()
-                .map(v -> VegetableDto.builder().id(v.getId()).name(v.getName()).color(v.getColor()).build())
+                .map(v -> vegetableVegetableDtoMapper.map(v))
                 .collect(Collectors.toList());
 
     }
@@ -49,7 +53,7 @@ public class VegetableServiceImpl implements VegetableService {
     public List<VegetableDto> findByName(String name) {
         return vegetableRepository.findByName(name)
                 .stream()
-                .map(v -> VegetableDto.builder().id(v.getId()).name(v.getName()).color(v.getColor()).build())
+                .map(v -> vegetableVegetableDtoMapper.map(v))
                 .collect(Collectors.toList());
     }
 
@@ -57,9 +61,5 @@ public class VegetableServiceImpl implements VegetableService {
     @Transactional
     public void save(Vegetable vegetable) {
         vegetableRepository.save(vegetable);
-
-        if("bla" == "bla"){
-            throw new IllegalArgumentException("bla");
-        }
     }
 }

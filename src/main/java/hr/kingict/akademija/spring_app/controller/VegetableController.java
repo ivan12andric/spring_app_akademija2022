@@ -2,6 +2,7 @@ package hr.kingict.akademija.spring_app.controller;
 
 import hr.kingict.akademija.spring_app.dto.VegetableDto;
 import hr.kingict.akademija.spring_app.form.VegetableForm;
+import hr.kingict.akademija.spring_app.mapper.VegetableFormVegetableMapper;
 import hr.kingict.akademija.spring_app.model.Vegetable;
 import hr.kingict.akademija.spring_app.service.VegetableService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class VegetableController {
 
     @Autowired
     private VegetableService vegetableService;
+
+    @Autowired
+    private VegetableFormVegetableMapper vegetableFormVegetableMapper;
 
     /*@GetMapping
     List<VegetableDto> findAll() {
@@ -102,12 +106,7 @@ public class VegetableController {
     @PostMapping
     ResponseEntity<String> create(@Valid @RequestBody VegetableForm vegetableForm) {
 
-        Vegetable newVegetable = new Vegetable();
-
-        newVegetable.setName(vegetableForm.getName());
-        newVegetable.setColor(vegetableForm.getColor());
-
-        vegetableService.save(newVegetable);
+        vegetableService.save(vegetableFormVegetableMapper.map(vegetableForm));
 
         return ResponseEntity
                 .ok()
