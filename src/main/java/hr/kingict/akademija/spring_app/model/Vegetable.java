@@ -33,4 +33,7 @@ public class Vegetable extends BasicEntity  {
     @ManyToOne(/*cascade = CascadeType.ALL*/)
     @JoinColumn(name = "PROIZVODJAC_ID")
     private Manufacturer manufacturer;
+
+   /* @ManyToMany
+    private Lista<Vitamin> vitamin;*/
 }
