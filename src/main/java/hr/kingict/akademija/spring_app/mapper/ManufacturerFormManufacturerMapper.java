@@ -10,6 +10,11 @@ import java.time.LocalDate;
 public class ManufacturerFormManufacturerMapper {
 
     public Manufacturer map(ManufacturerForm manufacturerForm){
+
+        if(manufacturerForm == null){
+            return null;
+        }
+
         return Manufacturer.builder()
                 .id(manufacturerForm.getId())
                 .name(manufacturerForm.getName())

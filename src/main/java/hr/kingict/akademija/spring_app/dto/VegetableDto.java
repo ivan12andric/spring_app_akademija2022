@@ -17,4 +17,5 @@ public class VegetableDto {
     private String name;
     private String color;
     private LocalDate bestBefore;
+    private ManufacturerDto manufacturer;
 }

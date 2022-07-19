@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.stereotype.Component;
 
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -25,4 +26,6 @@ public class VegetableForm {
     private String color;
     @JsonFormat(pattern = "dd.MM.yyyy")
     private LocalDate bestBefore;
+    @Valid
+    private ManufacturerForm manufacturer;
 }

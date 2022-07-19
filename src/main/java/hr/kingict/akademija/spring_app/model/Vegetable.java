@@ -1,21 +1,20 @@
 package hr.kingict.akademija.spring_app.model;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Builder
+@SuperBuilder
 @Entity
 @Table(name = "POVRCE")
-public class Vegetable {
-
+public class Vegetable extends BasicEntity  {
 
     @Id
     @Column
@@ -31,15 +30,7 @@ public class Vegetable {
     @Column(name = "DATUM_DO")
     private LocalDate bestBefore;
 
-    @Column(name = "DATUM_KREIRANJA")
-    private LocalDate created;
-
-    @Column(name = "DATUM_AZURIRANJA")
-    private LocalDate lastUpdate;
-
-    @Column(name = "KREIRAO")
-    private String userCreated;
-
-    @Column(name = "AZURIRAO")
-    private String userUpdated;
+    @ManyToOne(/*cascade = CascadeType.ALL*/)
+    @JoinColumn(name = "PROIZVODJAC_ID")
+    private Manufacturer manufacturer;
 }

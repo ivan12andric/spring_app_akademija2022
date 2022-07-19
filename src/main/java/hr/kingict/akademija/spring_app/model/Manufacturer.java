@@ -1,19 +1,21 @@
 package hr.kingict.akademija.spring_app.model;
 
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Builder
+@SuperBuilder
 @Entity
 @Table(name = "PROIZVODJAC")
-public class Manufacturer {
+public class Manufacturer extends BasicEntity {
 
     @Id
     @Column
@@ -23,16 +25,6 @@ public class Manufacturer {
     @Column(name = "NAZIV")
     private String name;
 
-    @Column(name = "DATUM_KREIRANJA")
-    private LocalDate created;
-
-    @Column(name = "DATUM_AZURIRANJA")
-    private LocalDate lastUpdate;
-
-    @Column(name = "KREIRAO")
-    private String userCreated;
-
-    @Column(name = "AZURIRAO")
-    private String userUpdated;
-
+    @OneToMany
+    private List<Vegetable> vegetableList;
 }

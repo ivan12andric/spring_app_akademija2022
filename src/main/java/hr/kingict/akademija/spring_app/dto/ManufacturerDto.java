@@ -2,7 +2,7 @@ package hr.kingict.akademija.spring_app.dto;
 
 import lombok.*;
 
-import java.time.LocalDate;
+import java.util.List;
 
 @Getter
 @Setter
@@ -14,4 +14,5 @@ public class ManufacturerDto {
 
     private Integer id;
     private String name;
+    private List<VegetableDto> vegetableList;
 }

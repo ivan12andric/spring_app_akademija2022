@@ -8,6 +8,12 @@ import org.springframework.stereotype.Component;
 public class ManufacturerManufacturerDtoMapper {
 
     public ManufacturerDto map(Manufacturer manufacturer){
+
+        if(manufacturer == null){
+            return null;
+        }
+
+
         return ManufacturerDto.builder()
                 .id(manufacturer.getId())
                 .name(manufacturer.getName())
