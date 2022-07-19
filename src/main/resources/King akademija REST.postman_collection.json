@@ -111,7 +111,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{   \r\n    \"name\" : \"paprika\",\r\n    \"color\" : \"crvena\",\r\n    \"bestBefore\" : \"18.07.2022\"\r\n}",
+          "raw": "{          \r\n    \"name\" : \"karfiol\",   \r\n    \"color\" : \"bijeli\",   \r\n    \"bestBefore\" : \"25.07.2022\",\r\n    \"manufacturer\" : {\"id\" : 1, \"name\" : \"Krivi naziv\"}\r\n}",
           "options": {
             "raw": {
               "language": "json"
