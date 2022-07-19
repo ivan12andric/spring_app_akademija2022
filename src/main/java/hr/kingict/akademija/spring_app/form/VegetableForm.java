@@ -19,7 +19,7 @@ import java.util.Date;
 public class VegetableForm {
 
     private Integer id;
-    @Size(min = 3, max = 10)
+    @Size(min = 3, max = 50)
     private String name;
     @NotNull(message = "Boja je obavezna")
     private String color;

@@ -12,6 +12,6 @@ import javax.validation.constraints.Size;
 public class ManufacturerForm {
 
     private Integer id;
-    @Size(min = 5, max = 10)
+    @Size(min = 5, max = 100)
     private String name;
 }

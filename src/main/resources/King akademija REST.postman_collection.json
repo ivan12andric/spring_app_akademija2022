@@ -25,6 +25,25 @@
       "response": []
     },
     {
+      "name": "Manufacturer find all",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/api/manufacturers",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "manufacturers"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
       "name": "Vegetables find by id",
       "request": {
         "method": "GET",
@@ -108,6 +127,34 @@
           "path": [
             "api",
             "vegetables"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Manufacturer create new",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{   \r\n    \"name\" : \"Eko eko d.o.o\"    \r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/api/manufacturers",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "manufacturers"
           ]
         }
       },
